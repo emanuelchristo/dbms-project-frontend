@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+	font-family: 'Gilroy', sans-serif;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	overflow-x: hidden;
+	position: relative;
+	background-color: aliceblue;
+}
+
+.app-container {
+	max-width: 425px;
+	margin: 0 auto;
+	background-color: #fff;
+	min-height: 100vh;
+}

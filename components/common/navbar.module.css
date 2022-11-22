@@ -1,0 +1,25 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	padding: var(--side-padding);
+}
+
+.ham-icon-wrapper {
+	width: 52px;
+	height: 52px;
+	border: var(--border);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.avatar {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: var(--border-color);
+	cursor: pointer;
+}
