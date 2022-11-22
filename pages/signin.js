@@ -5,7 +5,7 @@ export default function SigninPage() {
 		<div className={styles['container']}>
 			<img className={styles['logo']} src='logo.svg' />
 			<h1 className={styles['heading']}>
-				Signin to your <br />
+				Sign in to your <br />
 				account
 			</h1>
 
@@ -13,7 +13,7 @@ export default function SigninPage() {
 				<input type='email' placeholder='Email' />
 				<input type='password' placeholder='Password' />
 				<button className={styles['button']}>
-					<span>Signin</span> <img src='svgs/right-long-arrow-white.svg' />
+					<span>Sign in</span> <img src='svgs/right-long-arrow-white.svg' />
 				</button>
 				<div className={styles['or-container']}>
 					<div className={styles['or-line']}></div>
