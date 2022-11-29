@@ -1,19 +1,20 @@
-import styles from 'components/signin/signin-page.module.css'
+import styles from 'components/signup/signup-page.module.css'
 
 export default function SigninPage() {
 	return (
 		<div className={styles['container']}>
 			<img className={styles['logo']} src='logo.svg' />
 			<h1 className={styles['heading']}>
-				Sign in to your <br />
+				Create a new <br />
 				account
 			</h1>
 
 			<div className={styles['form-wrapper']}>
+				<input type='text' placeholder='Name' />
 				<input type='email' placeholder='Email' />
 				<input type='password' placeholder='Password' />
 				<button className={styles['button']}>
-					<span>Sign in</span> <img src='svgs/right-long-arrow-white.svg' />
+					<span>Create account</span> <img src='svgs/right-long-arrow-black.svg' />
 				</button>
 				<div className={styles['or-container']}>
 					<div className={styles['or-line']}></div>
@@ -21,7 +22,7 @@ export default function SigninPage() {
 					<div className={styles['or-line']}></div>
 				</div>
 				<button className={`${styles['button']} ${styles['grey']}`}>
-					<span>Create account</span> <img src='svgs/right-long-arrow-black.svg' />
+					<span>Sign in</span> <img src='svgs/right-long-arrow-black.svg' />
 				</button>
 			</div>
 		</div>
