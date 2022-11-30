@@ -36,6 +36,11 @@
 	transform: scale(1);
 }
 
+.green {
+	color: #000;
+	background-color: #c8ed5f;
+}
+
 .grey {
 	background-color: #f3f3f3;
 	color: #000;

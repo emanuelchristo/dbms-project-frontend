@@ -1,0 +1,12 @@
+.search-bar-container {
+	padding-left: var(--side-padding);
+	padding-right: var(--side-padding);
+	position: relative;
+}
+
+.search-icon {
+	font-size: 24px;
+	position: absolute;
+	right: 40px;
+	top: 16px;
+}

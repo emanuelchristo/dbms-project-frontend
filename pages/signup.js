@@ -1,4 +1,4 @@
-import styles from 'components/signup/signup-page.module.css'
+import styles from 'components/signin/signin-page.module.css'
 
 export default function SigninPage() {
 	return (
@@ -13,7 +13,7 @@ export default function SigninPage() {
 				<input type='text' placeholder='Name' />
 				<input type='email' placeholder='Email' />
 				<input type='password' placeholder='Password' />
-				<button className={styles['button']}>
+				<button className={`${styles['button']} ${styles['green']}`}>
 					<span>Create account</span> <img src='svgs/right-long-arrow-black.svg' />
 				</button>
 				<div className={styles['or-container']}>

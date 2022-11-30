@@ -1,0 +1,13 @@
+.recommended {
+	padding-left: var(--side-padding);
+	padding-right: var(--side-padding);
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+.list {
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
