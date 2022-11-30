@@ -1,0 +1,15 @@
+.content {
+	padding: 22px var(--side-padding);
+}
+
+.heading {
+	text-transform: capitalize;
+	margin-bottom: 12px;
+}
+
+.list {
+	margin-top: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}

@@ -14,7 +14,9 @@ export default function Navbar() {
 				<MdMenu />
 			</div>
 
-			<img src='logo.svg' />
+			<Link href='/'>
+				<img src='/logo.svg' className={styles['logo']} />
+			</Link>
 
 			<div className={styles['avatar']}></div>
 			<Menu show={showMenu} onClose={() => setShowMenu(false)} />

@@ -1,0 +1,20 @@
+.sort {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+}
+
+.sort-icon {
+	font-size: 24px;
+}
+
+.left span {
+	font-weight: 600;
+}
