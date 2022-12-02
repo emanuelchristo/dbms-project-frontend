@@ -1,11 +1,17 @@
 .navbar {
 	display: flex;
 	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
 	padding: var(--side-padding);
+	width: 100%;
 }
 
 .logo {
 	cursor: pointer;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .ham-icon-wrapper {
@@ -26,6 +32,23 @@
 	border-radius: 50%;
 	background-color: var(--border-color);
 	cursor: pointer;
+	display: none;
+}
+.sign-in {
+	background-color: #000;
+	color: #fff;
+	height: 40px;
+	padding: 0 14px;
+	padding-bottom: 1px;
+	border-radius: 100px;
+	font-weight: 500;
+	transition: 0.15s ease transform;
+}
+.sign-in:hover {
+	transform: scale(1.05);
+}
+.sign-in:active {
+	transform: scale(1);
 }
 .menu {
 	position: fixed;

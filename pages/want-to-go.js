@@ -1,16 +1,19 @@
-import { useRouter } from 'next/router'
 import Navbar from 'components/common/Navbar'
 import Sort from 'components/common/Sort'
 import SpotCardHorizontal from 'components/common/SpotCardHorizontal'
 import LoadMore from 'components/common/LoadMore'
+import FilterBar from 'components/common/FilterBar'
+import { MdBookmarkAdd } from 'react-icons/md'
 
-export default function CategoryPage() {
-	const router = useRouter()
-
+export default function WantToGoPage() {
 	return (
 		<>
 			<Navbar />
-			<h1 className='side-padding capitalize mb-[12px]'>{router.asPath.split('/')[1]}</h1>
+			<div className='side-padding flex items-center gap-[12px]'>
+				<MdBookmarkAdd style={{ fontSize: 30 }} color='#17A547' />
+				<h1>Want to go</h1>
+			</div>
+			<FilterBar />
 			<Sort />
 			<div className='vertical-card-list'>
 				<SpotCardHorizontal />

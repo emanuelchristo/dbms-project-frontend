@@ -19,6 +19,9 @@ export default function Navbar() {
 			</Link>
 
 			<div className={styles['avatar']}></div>
+			<Link href='/signin'>
+				<button className={styles['sign-in']}>Sign in</button>
+			</Link>
 			<Menu show={showMenu} onClose={() => setShowMenu(false)} />
 		</nav>
 	)

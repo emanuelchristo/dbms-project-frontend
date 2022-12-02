@@ -1,9 +1,13 @@
+import Link from 'next/link'
+
 import styles from 'components/signin/signin-page.module.css'
 
 export default function SigninPage() {
 	return (
 		<div className={styles['container']}>
-			<img className={styles['logo']} src='logo.svg' />
+			<Link href='/'>
+				<img className={styles['logo']} src='logo.svg' />
+			</Link>
 			<h1 className={styles['heading']}>
 				Create a new <br />
 				account
@@ -21,9 +25,11 @@ export default function SigninPage() {
 					<span>or</span>
 					<div className={styles['or-line']}></div>
 				</div>
-				<button className={`${styles['button']} ${styles['grey']}`}>
-					<span>Sign in</span> <img src='svgs/right-long-arrow-black.svg' />
-				</button>
+				<Link href='/signin'>
+					<button className={`${styles['button']} ${styles['grey']}`}>
+						<span>Sign in</span> <img src='svgs/right-long-arrow-black.svg' />
+					</button>
+				</Link>
 			</div>
 		</div>
 	)

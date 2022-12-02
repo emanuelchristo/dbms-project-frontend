@@ -6,6 +6,7 @@
 .logo {
 	height: 52px;
 	margin-bottom: 32px;
+	cursor: pointer;
 }
 
 .heading {
