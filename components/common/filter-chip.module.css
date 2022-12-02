@@ -1,0 +1,20 @@
+.filter-chip {
+	padding: 0 16px;
+	padding-bottom: 1px;
+	height: 37px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: var(--border);
+	border-radius: 100px;
+	width: fit-content;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
+}
+
+.checked {
+	background-color: #000;
+	color: #fff;
+	border-color: #000;
+}

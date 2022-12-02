@@ -4,6 +4,7 @@ import Sort from 'components/common/Sort'
 import SpotCardHorizontal from 'components/common/SpotCardHorizontal'
 
 import styles from 'components/category/category-page.module.css'
+import LoadMore from 'components/common/LoadMore'
 
 export default function CategoryPage() {
 	const router = useRouter()
@@ -12,15 +13,14 @@ export default function CategoryPage() {
 		<div>
 			<Navbar />
 			<div className={styles['content']}>
-				<h1 className={styles['heading']}>{router.asPath.split('/')[2]}</h1>
+				<h1 className={styles['heading']}>{router.asPath.split('/')[1]}</h1>
 				<Sort />
-				<div className={styles['list']}>
+				<div className='vertical-card-list'>
 					<SpotCardHorizontal />
 					<SpotCardHorizontal />
 					<SpotCardHorizontal />
 				</div>
-
-				<button className='load-more-button'>Load more</button>
+				<LoadMore />
 			</div>
 		</div>
 	)

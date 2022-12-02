@@ -7,16 +7,16 @@ export default function Browse() {
 		<div className={styles['browse']}>
 			<h2>Browse</h2>
 			<div className={styles['buttons-grid']}>
-				<Link href='/category/places'>
+				<Link href='/places'>
 					<button>Places</button>
 				</Link>
-				<Link href='/category/restaurants'>
+				<Link href='/restaurants'>
 					<button>Restaurants</button>
 				</Link>
-				<Link href='/category/movies'>
+				<Link href='/movies'>
 					<button>Movies</button>
 				</Link>
-				<Link href='/category/hotels'>
+				<Link href='/hotels'>
 					<button>Hotels</button>
 				</Link>
 			</div>

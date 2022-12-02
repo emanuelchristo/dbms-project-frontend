@@ -22,23 +22,14 @@ html {
 	border-right: var(--border);
 }
 
-.load-more-button {
-	width: 100%;
-	max-width: 220px;
-	height: 44px;
-	background-color: #f3f3f3;
-	border-radius: 100px;
-	font-size: 14px;
-	font-weight: 600;
-	margin: 36px auto;
-	display: block;
-	transition: 0.15s ease transform;
+.swiper-slide {
+	width: fit-content;
 }
 
-.load-more-button:hover {
-	transform: scale(1.05);
-}
-
-.load-more-button:active {
-	transform: scale(1);
+.vertical-card-list {
+	margin-top: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 0 var(--side-padding);
 }

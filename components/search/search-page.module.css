@@ -1,0 +1,8 @@
+.result-count {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--grey-color);
+	padding: 0 var(--side-padding);
+	display: inline-block;
+	padding-top: 18px;
+}
