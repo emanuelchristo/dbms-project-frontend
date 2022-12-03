@@ -1,6 +1,6 @@
 import CurrLocation from 'components/common/CurrLocation'
 import FilterBar from 'components/common/FilterBar'
-import LoadMore from 'components/common/LoadMore'
+import Pagination from 'components/common/Pagination'
 import Navbar from 'components/common/Navbar'
 import SearchBar from 'components/common/SearchBar'
 import Sort from 'components/common/Sort'
@@ -22,7 +22,7 @@ export default function SearchPage() {
 				<SpotCardHorizontal />
 				<SpotCardHorizontal />
 			</div>
-			<LoadMore />
+			<Pagination />
 		</>
 	)
 }

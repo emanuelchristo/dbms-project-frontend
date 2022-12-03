@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useGlobalContext } from 'lib/global-context'
+
 import Link from 'next/link'
 import { MdMenu, MdClose, MdHome, MdBookmarkAdd } from 'react-icons/md'
 import { IoMdHeart } from 'react-icons/io'
@@ -6,6 +8,7 @@ import { IoMdHeart } from 'react-icons/io'
 import styles from './navbar.module.css'
 
 export default function Navbar() {
+	const { user, signOut } = useGlobalContext()
 	const [showMenu, setShowMenu] = useState(false)
 
 	return (
@@ -18,10 +21,13 @@ export default function Navbar() {
 				<img src='/logo.svg' className={styles['logo']} />
 			</Link>
 
-			<div className={styles['avatar']}></div>
-			<Link href='/signin'>
-				<button className={styles['sign-in']}>Sign in</button>
-			</Link>
+			{user ? (
+				<div className={styles['avatar']} onClick={signOut}></div>
+			) : (
+				<Link href='/signin'>
+					<button className={styles['sign-in']}>Sign in</button>
+				</Link>
+			)}
 			<Menu show={showMenu} onClose={() => setShowMenu(false)} />
 		</nav>
 	)

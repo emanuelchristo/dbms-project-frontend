@@ -1,0 +1,67 @@
+.fav-wtg-buttons-wrapper {
+	display: flex;
+	gap: 8px;
+	padding: 24px var(--side-padding) 14px var(--side-padding);
+}
+.button-fav {
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	width: 50%;
+	height: 53px;
+	gap: 8px;
+	border: var(--border);
+	border-radius: 100px;
+	justify-content: center;
+	padding-bottom: 1px;
+	transition: 0.1s ease all;
+}
+.button-fav:hover {
+	transform: scale(1.04);
+}
+
+.button-fav:active {
+	transform: none;
+}
+
+.button-icon {
+	font-size: 24px;
+}
+
+.button-fav span {
+	font-weight: 600;
+}
+
+.directions-wrapper {
+	padding: 0 var(--side-padding);
+	margin-bottom: 32px;
+}
+
+.directions-button {
+	background-color: #0260ee;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	width: 100%;
+	border-radius: 100px;
+	height: 51px;
+	transition: 0.15s ease all;
+}
+
+.directions-button:hover {
+	transform: scale(1.03);
+}
+
+.about-wrapper {
+	padding: 0 var(--side-padding);
+}
+
+.about-heading {
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 12px;
+}
+
+.about-para {
+	color: var(--grey-color);
+}
