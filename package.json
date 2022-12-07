@@ -10,6 +10,9 @@
 		"prettier": "prettier --write ."
 	},
 	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@mui/material": "^5.10.17",
 		"axios": "^1.2.0",
 		"geodist": "^0.2.1",
 		"next": "12.2.2",

@@ -22,7 +22,11 @@ export default function Navbar() {
 			</Link>
 
 			{user ? (
-				<div className={styles['avatar']} onClick={signOut}></div>
+				<div
+					className={styles['avatar']}
+					onClick={signOut}
+					style={{ backgroundImage: `url('${user.imageUrl}')` }}
+				></div>
 			) : (
 				<Link href='/signin'>
 					<button className={styles['sign-in']}>Sign in</button>

@@ -15,7 +15,6 @@ export default function FavouritesPage() {
 	const router = useRouter()
 
 	const [spots, setSpots] = useState([])
-	const [sort, setSort] = useState('nearest')
 	const [filter, setFilter] = useState('all')
 	const [currPage, setCurrPage] = useState(1)
 	const [maxPage, setMaxPage] = useState(1)
@@ -30,12 +29,12 @@ export default function FavouritesPage() {
 	}, [])
 
 	useEffect(() => {
-		if (filter && sort && currPage && user) fetchData()
-	}, [filter, sort, currPage, user])
+		if (filter && currPage && user) fetchData()
+	}, [filter, currPage, user])
 
 	function fetchData() {
 		setLoading(true)
-		fetchWantToGo({ user, type: filter, sort, currPage })
+		fetchWantToGo({ user, type: filter, currPage })
 			.then((data) => {
 				if (data) setSpots([...data])
 				setLoading(false)
@@ -51,7 +50,6 @@ export default function FavouritesPage() {
 				<h1>Want to go</h1>
 			</div>
 			<FilterBar value={filter} onChange={setFilter} />
-			<Sort value={sort} onChange={setSort} />
 			<SpotsList spots={spots} loading={loading} />
 			{maxPage > 1 && <Pagination currPage={currPage} maxPage={maxPage} onChange={setCurrPage} />}
 		</>

@@ -1,0 +1,39 @@
+.reviews-wrapper {
+	padding: 16px var(--side-padding) 24px var(--side-padding);
+}
+
+.review-button {
+	width: 100%;
+	border: var(--border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	height: 48px;
+	border-radius: 100px;
+	transition: 0.15s ease all;
+	margin-top: 28px;
+}
+
+.review-button span {
+	font-weight: 600;
+}
+
+.review-button-icon {
+	font-size: 24px;
+}
+
+.review-button:hover {
+	transform: scale(1.03);
+}
+
+.review-button:active {
+	transform: none;
+}
+
+.reviews-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 28px 0;
+}

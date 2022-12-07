@@ -1,10 +1,17 @@
 input,
-select {
+select,
+textarea {
 	height: 56px;
 	padding: 12px 22px;
 	border-radius: 100px;
 	border: var(--border);
 	width: 100%;
+}
+
+textarea {
+	height: 200px;
+	border-radius: 12px;
+	padding: 12px 14px;
 }
 
 input::placeholder {

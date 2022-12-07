@@ -1,6 +1,7 @@
 :root {
 	--border-color: rgba(0, 0, 0, 0.1);
-	--grey-color: rgba(0, 0, 0, 0.3);
+	--grey-color: rgba(0, 0, 0, 0.4);
+	--blue-color: #0260ee;
 
 	--image-bg-color: rgba(0, 0, 0, 0.05);
 

@@ -32,6 +32,9 @@
 	border-radius: 50%;
 	background-color: var(--border-color);
 	cursor: pointer;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 .sign-in {
 	background-color: #000;
@@ -42,6 +45,7 @@
 	border-radius: 100px;
 	font-weight: 500;
 	transition: 0.15s ease transform;
+	width: fit-content;
 }
 .sign-in:hover {
 	transform: scale(1.05);

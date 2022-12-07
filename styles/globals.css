@@ -27,7 +27,7 @@ html {
 }
 
 .vertical-card-list {
-	margin-top: 28px;
+	margin-top: 22px;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
@@ -36,4 +36,55 @@ html {
 
 .side-padding {
 	padding: 0 var(--side-padding);
+}
+
+.icon-button {
+	border: var(--border);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	padding-bottom: 1px;
+	color: #666;
+	transition: 0.1s ease all;
+}
+
+.icon-button:hover {
+	color: #000;
+}
+
+.icon-button:active {
+	color: #666;
+}
+
+button {
+	border-radius: 100px;
+	height: 48px;
+	font-weight: 600;
+	/* width: 100%; */
+}
+
+button.primary {
+	background-color: var(--blue-color);
+	color: #fff;
+}
+
+button.outline {
+	outline: none;
+	border: var(--border);
+}
+
+button {
+	transition: 0.1s ease all;
+}
+
+button:hover {
+	transform: scale(1.03);
+}
+
+button:active {
+	transform: none;
 }

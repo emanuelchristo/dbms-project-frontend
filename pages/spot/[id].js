@@ -7,8 +7,13 @@ import Navbar from 'components/common/Navbar'
 import Header from 'components/spot/Header'
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { MdBookmark, MdBookmarkBorder } from 'react-icons/md'
+import SpotGallery from 'components/spot/SpotGallery'
 
 import styles from 'components/spot/spot-page.module.css'
+import NearBy from 'components/spot/Nearby'
+import Reviews from 'components/spot/Reviews'
+import { netRating } from 'lib/utils/net-rating'
+import Loading from 'components/common/Loading'
 
 export default function SpotPage() {
 	const router = useRouter()
@@ -21,12 +26,13 @@ export default function SpotPage() {
 	useEffect(() => {
 		if (!router.isReady) return
 		fetchData()
-	}, [router.isReady])
+	}, [router.isReady, authToken])
 
 	function fetchData() {
 		setLoading(true)
-		fetchSpot({ spotId: router.query.id })
+		fetchSpot({ authToken, spotId: router.query.id })
 			.then((data) => {
+				console.log(data)
 				setLoading(false)
 				setSpot(data)
 			})
@@ -69,49 +75,100 @@ export default function SpotPage() {
 			.catch(console.error)
 	}
 
-	return (
-		<>
-			<Navbar />
-			<Header
-				type={spot?.type}
-				name={spot?.name}
-				latitude={spot?.latitude}
-				longitude={spot?.longitude}
-				rating={spot?.google_rating}
-				city={spot?.city}
-			/>
+	if (loading)
+		return (
+			<>
+				<Navbar />
+				<div className=' h-[100px]'></div>
+				<Loading />
+			</>
+		)
+	else
+		return (
+			<>
+				<Navbar />
 
-			<div className={styles['fav-wtg-buttons-wrapper']}>
-				<button className={styles['button-fav']} onClick={handleFavourite}>
-					{userSpotDetails?.favourite ? (
-						<IoMdHeart className={styles['button-icon']} color='#D40404' />
-					) : (
-						<IoMdHeartEmpty className={styles['button-icon']} color='#D40404' />
-					)}
-					<span>Favourite</span>
-				</button>
-				<button
-					className={`${styles['button-fav']} ${styles['want-to-go']}`}
-					onClick={handleWantToGo}
-				>
-					{userSpotDetails?.wantToGo ? (
-						<MdBookmark className={styles['button-icon']} color='#0A984B' />
-					) : (
-						<MdBookmarkBorder className={styles['button-icon']} color='#0A984B' />
-					)}
-					<span>Want to go</span>
-				</button>
-			</div>
-			<div className={styles['directions-wrapper']}>
-				<a href={spot?.location_link} target='_blank' rel='noreferrer noopener'>
-					<button className={styles['directions-button']}>Directions</button>
-				</a>
-			</div>
+				<SpotGallery images={spot?.images} />
+				<Header
+					type={spot?.type}
+					name={spot?.name}
+					latitude={spot?.latitude}
+					longitude={spot?.longitude}
+					rating={netRating(spot?.user_rating, spot?.google_rating)}
+					city={spot?.city}
+				/>
 
-			<div className={styles['about-wrapper']}>
-				<span className={styles['about-heading']}>About spot</span>
-				<p className={styles['about-para']}>{spot?.description || 'N/A'}</p>
-			</div>
-		</>
-	)
+				<div className={styles['fav-wtg-buttons-wrapper']}>
+					<button className={styles['button-fav']} onClick={handleFavourite}>
+						{userSpotDetails?.favourite ? (
+							<IoMdHeart className={styles['button-icon']} color='#D40404' />
+						) : (
+							<IoMdHeartEmpty className={styles['button-icon']} color='#D40404' />
+						)}
+						<span>Favourite</span>
+					</button>
+					<button
+						className={`${styles['button-fav']} ${styles['want-to-go']}`}
+						onClick={handleWantToGo}
+					>
+						{userSpotDetails?.wantToGo ? (
+							<MdBookmark className={styles['button-icon']} color='#0A984B' />
+						) : (
+							<MdBookmarkBorder className={styles['button-icon']} color='#0A984B' />
+						)}
+						<span>Want to go</span>
+					</button>
+				</div>
+				<div className={styles['directions-wrapper']}>
+					<a href={spot?.location_link} target='_blank' rel='noreferrer noopener'>
+						<button className={styles['directions-button']}>Directions</button>
+					</a>
+				</div>
+
+				<div className={styles['about-wrapper']}>
+					<span className={styles['about-heading']}>About spot</span>
+					<p className={styles['about-para']}>{spot?.description || 'N/A'}</p>
+				</div>
+
+				<NearBy
+					spots={
+						spot?.nearBySpots || [
+							{
+								spot_id: 1,
+								type: 'place',
+								google_rating: 3.3,
+								name: 'BBQ Station',
+								latitude: 32.1343433,
+								longitude: 13.234324234,
+								city: 'Calicut',
+							},
+							{
+								spot_id: 2,
+								type: 'place',
+								google_rating: 3.3,
+								name: 'BBQ Station',
+								latitude: 32.1343433,
+								longitude: 13.234324234,
+								city: 'Calicut',
+							},
+							{
+								spot_id: 3,
+								type: 'place',
+								google_rating: 3.3,
+								name: 'BBQ Station',
+								latitude: 32.1343433,
+								longitude: 13.234324234,
+								city: 'Calicut',
+							},
+						]
+					}
+				/>
+
+				<Reviews
+					currUserReview={spot?.currUserReview}
+					reviews={spot?.currUserReview ? [spot.currUserReview, ...spot?.reviews] : spot?.reviews}
+					spotId={spot?.spot_id}
+				/>
+			</>
+		)
 }

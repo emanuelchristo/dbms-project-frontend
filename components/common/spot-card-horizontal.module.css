@@ -5,9 +5,17 @@
 	cursor: pointer;
 }
 
+.vertical {
+	flex-direction: column;
+	align-items: flex-start;
+	width: 150px;
+	overflow: hidden;
+	gap: 14px;
+}
+
 .thumbnail {
-	width: 128px;
-	height: 128px;
+	width: 150px;
+	height: 150px;
 	border-radius: 16px;
 	background-color: var(--image-bg-color);
 	background-size: cover;
@@ -21,6 +29,10 @@
 	gap: 10px;
 }
 
+.vertical .content-wrapper {
+	gap: 8px;
+}
+
 .type {
 	font-size: 13px;
 	font-weight: 600;
@@ -28,6 +40,12 @@
 	padding: 5px 10px;
 	border: var(--border);
 	border-radius: 50px;
+	width: fit-content;
+}
+
+.vertical .type {
+	font-size: 12px;
+	padding: 3px 8px;
 }
 
 .rating-wrapper {
@@ -46,6 +64,10 @@
 .title {
 	font-size: 20px;
 	font-weight: 600;
+}
+
+.vertical .title {
+	font-size: 18px;
 }
 
 .distance,
