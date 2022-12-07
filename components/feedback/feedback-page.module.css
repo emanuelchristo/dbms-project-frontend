@@ -20,6 +20,7 @@
   padding: 20px;
 }
 
+
 .input:focus{
 	outline: none;
 	box-shadow: rgba(0, 0, 0, 0.35) 5px 15px 25px;
