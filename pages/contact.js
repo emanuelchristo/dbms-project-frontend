@@ -1,4 +1,5 @@
 import Navbar from 'components/common/Navbar'
+import Footer from 'components/common/Footer'
 import { MdPhone } from 'react-icons/md'
 import { MdOutlineMail } from 'react-icons/md'
 
@@ -45,5 +46,6 @@ export default function ContactPage() {
         </button>
       </div>
 		</>
+
 	)
 }
