@@ -1,0 +1,48 @@
+.feedback {
+	margin: auto;
+	padding: 20px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.message{
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.input{
+  resize: none;
+  border-bottom: solid 1px black;
+  height: 300px;
+  width:100%;
+  padding: 20px;
+  background-color: white;
+  transition: background-color 0.5s;
+}
+
+.input:hover{
+  background-color:rgb(240,240,240);
+}
+
+.button {
+	margin: auto;
+	font-size: 20px;
+	border: solid 1px black;
+	width: fit-content;
+	height: fit-content;
+	padding: 7px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+	/*font-weight: bold;*/
+	background-color: white;
+	color: black;
+	transition: background-color 0.75s;
+	transition: color 0.5s;
+}
+
+.button:hover {
+	background-color: rgba(0, 0, 0, 0.714);
+	color: white;
+}

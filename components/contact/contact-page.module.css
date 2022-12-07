@@ -5,16 +5,16 @@
 	margin-top: 20px;
 	padding-left: 25px;
 	margin-bottom: 50px;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 .info {
 	margin: auto;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	width: fit-content;
 	position: center;
-	font-size: 21px;
-	border-radius: 100px;
+	font-size: 24px;
+	/*border-radius: 100px;*/
 	padding: 7px;
 }
 
@@ -54,55 +54,53 @@
 	flex-direction: column;
 	margin: auto;
 	margin-bottom: 20px;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	width: fit-content;
 	position: center;
-	font-size: 20px;
-	border-radius: 100px;
+	font-size: 24px;
+	/*border-radius: 100px;*/
 	padding: 7px;
 }
 
-.detials{
+.detials {
 	display: flex;
 	flex-direction: column;
-	margin:auto;
+	margin: auto;
 }
-.name{
+.name {
 	display: flex;
 	flex-direction: column;
-	margin:auto;
+	margin: auto;
 	margin-left: 40px;
 	margin-top: 25px;
 	padding-right: 70px;
 	padding-bottom: 20px;
 }
 
-.input{
+.input {
 	margin-top: 10px;
 	width: auto;
 	height: auto;
-	
 }
 
-.button{
+.button {
 	margin: auto;
 	font-size: 20px;
-	border: solid 2px black;
-	width:fit-content;
-	height:fit-content;
+	border: solid 1px black;
+	width: fit-content;
+	height: fit-content;
 	padding: 7px;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	border-radius: 100px;
 	margin-bottom: 20px;
-	font-weight: bold;
 	background-color: white;
 	color: black;
 	transition: background-color 0.75s;
 	transition: color 0.5s;
 }
 
-.button:hover{
-	background-color:black;
+.button:hover {
+	background-color: rgba(0, 0, 0, 0.801);
 	color: white;
 }
