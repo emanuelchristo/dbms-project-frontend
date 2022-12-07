@@ -1,3 +1,7 @@
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
+
 import 'swiper/css'
 
 import 'styles/variables.css'
@@ -8,11 +12,16 @@ import 'styles/form.css'
 
 import 'assets/fonts/gilroy/stylesheet.css'
 
+import { GlobalContextWrapper } from 'lib/global-context'
+
 function MyApp({ Component, pageProps }) {
 	return (
-		<div className='app-container'>
-			<Component {...pageProps} />
-		</div>
+		<GlobalContextWrapper>
+			<div className='app-container'>
+				<Component {...pageProps} />
+				<ToastContainer />
+			</div>
+		</GlobalContextWrapper>
 	)
 }
 

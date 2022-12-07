@@ -32,7 +32,6 @@
 	border-radius: 50%;
 	background-color: var(--border-color);
 	cursor: pointer;
-	display: none;
 }
 .sign-in {
 	background-color: #000;
