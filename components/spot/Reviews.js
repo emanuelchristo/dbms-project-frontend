@@ -68,25 +68,27 @@ export default function Reviews({ spotId, currUserReview, reviews }) {
 					<span>Add a review</span>
 				</button>
 			)}
-			<div className={styles['reviews-list']}>
-				{reviews?.map((item) => (
-					<ReviewItem
-						key={item?.review_id}
-						userName={item?.username}
-						description={item?.description}
-						rating={item?.rating}
-						showOptions={item?.user_id == user?.userId}
-						onEdit={() => {
-							setEditReview(item)
-							setShowAddReview(true)
-						}}
-						onDelete={() => {
-							setDeleteReviewId(item?.review_id)
-							setShowDeleteReview(true)
-						}}
-					/>
-				))}
-			</div>
+			{reviews?.length > 0 && (
+				<div className={styles['reviews-list']}>
+					{reviews?.map((item) => (
+						<ReviewItem
+							key={item?.review_id}
+							userName={item?.username}
+							description={item?.description}
+							rating={item?.rating}
+							showOptions={item?.user_id == user?.userId}
+							onEdit={() => {
+								setEditReview(item)
+								setShowAddReview(true)
+							}}
+							onDelete={() => {
+								setDeleteReviewId(item?.review_id)
+								setShowDeleteReview(true)
+							}}
+						/>
+					))}
+				</div>
+			)}
 			<Modal show={showAddReview}>
 				<AddReview
 					rating={editReview?.rating}

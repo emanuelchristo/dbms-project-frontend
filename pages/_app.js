@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }) {
 		<GlobalContextWrapper>
 			<div className='app-container'>
 				<Component {...pageProps} />
+				<div className='h-[32px]'></div>
 				<ToastContainer />
 			</div>
 		</GlobalContextWrapper>

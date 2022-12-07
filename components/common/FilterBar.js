@@ -25,7 +25,7 @@ export default function FilterBar({
 }) {
 	return (
 		<div className={styles['filter-bar']}>
-			<Swiper spaceBetween={12} slidesPerView={'auto'} freeMode={true}>
+			<Swiper spaceBetween={12} slidesPerView={'auto'} freeMode={true} threshold={2}>
 				{options.map((item) => (
 					<SwiperSlide key={item.value} onClick={() => onChange(item.value)}>
 						<FilterChip label={item.label} checked={item.value === value} />

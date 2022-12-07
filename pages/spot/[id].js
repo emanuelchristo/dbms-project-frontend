@@ -26,7 +26,7 @@ export default function SpotPage() {
 	useEffect(() => {
 		if (!router.isReady) return
 		fetchData()
-	}, [router.isReady, authToken])
+	}, [router.isReady, authToken, router.asPath])
 
 	function fetchData() {
 		setLoading(true)
@@ -130,39 +130,7 @@ export default function SpotPage() {
 					<p className={styles['about-para']}>{spot?.description || 'N/A'}</p>
 				</div>
 
-				<NearBy
-					spots={
-						spot?.nearBySpots || [
-							{
-								spot_id: 1,
-								type: 'place',
-								google_rating: 3.3,
-								name: 'BBQ Station',
-								latitude: 32.1343433,
-								longitude: 13.234324234,
-								city: 'Calicut',
-							},
-							{
-								spot_id: 2,
-								type: 'place',
-								google_rating: 3.3,
-								name: 'BBQ Station',
-								latitude: 32.1343433,
-								longitude: 13.234324234,
-								city: 'Calicut',
-							},
-							{
-								spot_id: 3,
-								type: 'place',
-								google_rating: 3.3,
-								name: 'BBQ Station',
-								latitude: 32.1343433,
-								longitude: 13.234324234,
-								city: 'Calicut',
-							},
-						]
-					}
-				/>
+				<NearBy spots={spot?.nearBySpots} />
 
 				<Reviews
 					currUserReview={spot?.currUserReview}

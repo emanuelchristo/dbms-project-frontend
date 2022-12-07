@@ -88,3 +88,13 @@ button:hover {
 button:active {
 	transform: none;
 }
+
+button.no-anim {
+	transition: none;
+}
+button.no-anim:hover {
+	transform: none;
+}
+button.no-anim:active {
+	transform: none;
+}

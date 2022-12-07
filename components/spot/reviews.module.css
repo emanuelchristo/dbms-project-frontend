@@ -1,5 +1,5 @@
 .reviews-wrapper {
-	padding: 16px var(--side-padding) 24px var(--side-padding);
+	padding: 16px var(--side-padding) 0 var(--side-padding);
 }
 
 .review-button {

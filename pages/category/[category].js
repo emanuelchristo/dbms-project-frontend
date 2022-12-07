@@ -17,7 +17,7 @@ export default function CategoryPage() {
 
 	useEffect(() => {
 		if (!router.isReady) return
-		setType(router.asPath.split('/')[1].slice(0, -1))
+		setType(router.asPath.split('/')[2].slice(0, -1))
 	}, [router.isReady])
 
 	useEffect(() => {
@@ -35,7 +35,7 @@ export default function CategoryPage() {
 	return (
 		<>
 			<Navbar />
-			<h1 className='side-padding capitalize mb-[12px]'>{type}</h1>
+			<h1 className='side-padding capitalize mb-[12px]'>{type + 's'}</h1>
 			<Sort
 				options={[
 					{ label: 'Nearest', value: 'nearest' },
