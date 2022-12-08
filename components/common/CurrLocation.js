@@ -1,17 +1,14 @@
-import { getCurrLocation } from 'lib/location'
-import { useEffect } from 'react'
+import { useGlobalContext } from 'lib/global-context'
 
 import styles from './curr-location.module.css'
 
-export default function CurrLocation({ location }) {
-	useEffect(() => {
-		getCurrLocation(console.log)
-	}, [])
+export default function CurrLocation() {
+	const { currLocName } = useGlobalContext()
 
 	return (
 		<div className={styles['curr-location']}>
 			<span>Location</span>
-			<span>{location || 'NIT Calicut'}</span>
+			<span>{currLocName || 'NIT Calicut'}</span>
 		</div>
 	)
 }

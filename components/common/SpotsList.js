@@ -8,7 +8,7 @@ export default function SpotsList({ spots, loading }) {
 	else
 		return (
 			<div>
-				{spots.length > 0 ? (
+				{spots?.length > 0 ? (
 					<div className='vertical-card-list'>
 						{spots?.map((item) => (
 							<SpotCardHorizontal

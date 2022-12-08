@@ -33,6 +33,10 @@ export default function Reviews({ spotId, currUserReview, reviews }) {
 	}
 
 	function handlePost(review) {
+		if (review.rating === null) {
+			toast.error('Add a rating')
+			return
+		}
 		if (editReview === null)
 			toast
 				.promise(submitReview({ authToken, spotId, review }), {

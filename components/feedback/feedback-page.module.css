@@ -1,0 +1,10 @@
+.content {
+	padding: 16px var(--side-padding);
+	display: flex;
+	flex-direction: column;
+}
+
+.sub-title {
+	color: var(--grey-color);
+	margin-bottom: 24px;
+}

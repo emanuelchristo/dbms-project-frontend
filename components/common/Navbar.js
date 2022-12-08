@@ -8,7 +8,7 @@ import { IoMdHeart } from 'react-icons/io'
 import styles from './navbar.module.css'
 
 export default function Navbar() {
-	const { user, signOut } = useGlobalContext()
+	const { user } = useGlobalContext()
 	const [showMenu, setShowMenu] = useState(false)
 
 	return (
@@ -22,11 +22,12 @@ export default function Navbar() {
 			</Link>
 
 			{user ? (
-				<div
-					className={styles['avatar']}
-					onClick={signOut}
-					style={{ backgroundImage: `url('${user.imageUrl}')` }}
-				></div>
+				<Link href='/profile'>
+					<div
+						className={styles['avatar']}
+						style={{ backgroundImage: `url('${user.imageUrl}')` }}
+					></div>
+				</Link>
 			) : (
 				<Link href='/signin'>
 					<button className={styles['sign-in']}>Sign in</button>

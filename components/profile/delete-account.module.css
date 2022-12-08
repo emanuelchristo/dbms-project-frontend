@@ -1,0 +1,20 @@
+.delete-account {
+	background-color: #fff;
+	border-radius: 16px;
+	width: 320px;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+}
+
+.heading {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.text {
+	color: var(--grey-color);
+	margin-top: 18px;
+	margin-bottom: 12px;
+	margin-left: 4px;
+}

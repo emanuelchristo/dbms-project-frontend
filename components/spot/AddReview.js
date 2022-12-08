@@ -11,7 +11,7 @@ export default function AddReview({
 	onCancel,
 	onPost,
 }) {
-	const [rating, setRating] = useState(ratingProp || 0)
+	const [rating, setRating] = useState(ratingProp || null)
 	const [description, setDescription] = useState(descriptionProp || '')
 
 	return (
