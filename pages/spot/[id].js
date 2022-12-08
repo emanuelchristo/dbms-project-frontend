@@ -10,7 +10,7 @@ import { MdBookmark, MdBookmarkBorder } from 'react-icons/md'
 import SpotGallery from 'components/spot/SpotGallery'
 
 import styles from 'components/spot/spot-page.module.css'
-import NearBy from 'components/spot/Nearby'
+import NearBy from 'components/spot/NearBy'
 import Reviews from 'components/spot/Reviews'
 import { netRating } from 'lib/utils/net-rating'
 import Loading from 'components/common/Loading'
