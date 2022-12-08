@@ -4,5 +4,6 @@
 	color: var(--grey-color);
 	padding: 0 var(--side-padding);
 	display: inline-block;
-	padding-top: 18px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }

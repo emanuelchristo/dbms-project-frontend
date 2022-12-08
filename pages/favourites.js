@@ -45,7 +45,7 @@ export default function FavouritesPage() {
 	return (
 		<>
 			<Navbar />
-			<div className='side-padding flex items-center gap-[12px]'>
+			<div className='side-padding flex items-center gap-[12px] my-[8px]'>
 				<IoMdHeart style={{ fontSize: 30 }} color='#E70D42' />
 				<h1>Favourites</h1>
 			</div>

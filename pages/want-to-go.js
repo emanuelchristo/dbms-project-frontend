@@ -45,7 +45,7 @@ export default function FavouritesPage() {
 	return (
 		<>
 			<Navbar />
-			<div className='side-padding flex items-center gap-[12px]'>
+			<div className='side-padding flex items-center gap-[12px] my-[8px]'>
 				<MdBookmarkAdd style={{ fontSize: 30 }} color='#17A547' />
 				<h1>Want to go</h1>
 			</div>

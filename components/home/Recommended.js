@@ -6,7 +6,7 @@ import styles from './recommended.module.css'
 export default function Recommended({ spots }) {
 	return (
 		<div className={styles['recommended']}>
-			<h2>Recommended</h2>
+			<h2 className={styles['heading']}>Recommended</h2>
 			<SpotsList spots={spots} />
 		</div>
 	)

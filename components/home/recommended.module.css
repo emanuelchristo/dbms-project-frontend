@@ -1,8 +1,9 @@
 .recommended {
-	padding-left: var(--side-padding);
-	padding-right: var(--side-padding);
-	padding-top: 36px;
-	padding-bottom: 36px;
+	padding: 24px 0;
+}
+
+.heading {
+	padding: 0 var(--side-padding);
 }
 
 .list {

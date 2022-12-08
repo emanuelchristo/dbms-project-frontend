@@ -1,8 +1,11 @@
 .curr-location {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	margin-bottom: 24px;
+	margin-bottom: 20px;
+	margin-top: 4px;
+	padding: 0 var(--side-padding);
+	justify-content: center;
+	gap: 16px;
 }
 
 .curr-location span:first-child {

@@ -11,6 +11,7 @@ body,
 html {
 	overflow-x: hidden;
 	position: relative;
+	min-width: 375px;
 }
 
 .app-container {
@@ -27,10 +28,10 @@ html {
 }
 
 .vertical-card-list {
-	margin-top: 22px;
+	margin-top: 12px;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: 12px;
 	padding: 0 var(--side-padding);
 }
 

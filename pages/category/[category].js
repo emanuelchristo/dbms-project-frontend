@@ -1,3 +1,5 @@
+import styles from 'components/category/category-page.module.css'
+
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { fetchCategory } from 'lib/api/category'
@@ -35,7 +37,17 @@ export default function CategoryPage() {
 	return (
 		<>
 			<Navbar />
-			<h1 className='side-padding capitalize mb-[12px]'>{type + 's'}</h1>
+			<div
+				style={{
+					backgroundImage: `linear-gradient(#fff, rgba(255, 255, 255, 0) 30%),
+														linear-gradient(#00000000 20%, rgba(0, 0, 0, 0.8)),
+														url('/images/${type}.jpg')`,
+				}}
+				className={styles['banner']}
+			>
+				<h1 className={styles['heading']}>{type ? type + 's' : ''}</h1>
+			</div>
+			{/* <h1 className='side-padding capitalize mb-[12px]'>{type + 's'}</h1> */}
 			<Sort
 				options={[
 					{ label: 'Nearest', value: 'nearest' },
@@ -44,6 +56,7 @@ export default function CategoryPage() {
 				value={sort}
 				onChange={setSort}
 			/>
+			<div className='h-[10px]'></div>
 			<SpotsList spots={spots} />
 			{maxPage > 1 && <Pagination currPage={currPage} maxPage={maxPage} onChange={setCurrPage} />}
 		</>
