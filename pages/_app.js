@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -16,13 +17,18 @@ import { GlobalContextWrapper } from 'lib/global-context'
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<GlobalContextWrapper>
-			<div className='app-container'>
-				<Component {...pageProps} />
-				<div className='h-[32px]'></div>
-				<ToastContainer />
-			</div>
-		</GlobalContextWrapper>
+		<>
+			<Head>
+				<title>LetsGo - Travel Recommendation System for NITC Students</title>
+			</Head>
+			<GlobalContextWrapper>
+				<div className='app-container'>
+					<Component {...pageProps} />
+					<div className='h-[32px]'></div>
+					<ToastContainer />
+				</div>
+			</GlobalContextWrapper>
+		</>
 	)
 }
 
