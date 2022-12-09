@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import styles from 'components/signin/signin-page.module.css'
 
-export default function SigninPage() {
+export default function SignupPage() {
 	const router = useRouter()
 	const { getUser, signUp } = useGlobalContext()
 	const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' })
@@ -28,6 +28,11 @@ export default function SigninPage() {
 
 	function handleCreateAccount(e) {
 		e.preventDefault()
+
+		if (form.password.length < 6) {
+			toast.error('Weak password')
+			return
+		}
 
 		if (form.password !== form.confirmPassword) {
 			toast.error("Passwords doesn't match")
