@@ -1,5 +1,6 @@
 .content {
 	padding: 16px var(--side-padding);
+	padding-top: 8px;
 	display: flex;
 	flex-direction: column;
 }

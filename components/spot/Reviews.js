@@ -72,7 +72,7 @@ export default function Reviews({ spotId, currUserReview, reviews }) {
 					<span>Add a review</span>
 				</button>
 			)}
-			{reviews?.length > 0 && (
+			{reviews?.length > 0 ? (
 				<div className={styles['reviews-list']}>
 					{reviews?.map((item) => (
 						<ReviewItem
@@ -92,6 +92,8 @@ export default function Reviews({ spotId, currUserReview, reviews }) {
 						/>
 					))}
 				</div>
+			) : (
+				<div className={styles['no-reviews']}>No reviews yet</div>
 			)}
 			<Modal show={showAddReview}>
 				<AddReview

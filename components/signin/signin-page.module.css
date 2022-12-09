@@ -1,6 +1,7 @@
 .container {
 	padding: 0 var(--side-padding);
-	padding-top: 100px;
+	padding-top: 32px;
+	padding-bottom: 60px;
 }
 
 .logo {
@@ -50,7 +51,7 @@
 .form-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 14px;
+	gap: 12px;
 }
 
 .or-container {

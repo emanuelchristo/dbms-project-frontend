@@ -7,7 +7,7 @@
 .buttons-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 8px 10px;
+	gap: 8px 6px;
 	margin-top: 16px;
 }
 

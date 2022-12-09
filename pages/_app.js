@@ -14,6 +14,7 @@ import 'styles/form.css'
 import 'assets/fonts/gilroy/stylesheet.css'
 
 import { GlobalContextWrapper } from 'lib/global-context'
+import Footer from 'components/common/Footer'
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }) {
 			<GlobalContextWrapper>
 				<div className='app-container'>
 					<Component {...pageProps} />
-					<div className='h-[32px]'></div>
+					<Footer />
 					<ToastContainer />
 				</div>
 			</GlobalContextWrapper>

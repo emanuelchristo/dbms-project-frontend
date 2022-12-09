@@ -1,9 +1,10 @@
 .recommended {
-	padding: 24px 0;
+	padding-top: 24px;
 }
 
 .heading {
 	padding: 0 var(--side-padding);
+	margin-bottom: 18px;
 }
 
 .list {

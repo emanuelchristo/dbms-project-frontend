@@ -37,3 +37,16 @@
 	gap: 20px;
 	padding: 28px 0;
 }
+
+.no-reviews {
+	background-color: rgba(0, 0, 0, 0.02);
+	border: 1px dashed rgba(0, 0, 0, 0.1);
+	border-radius: 14px;
+	color: rgba(0, 0, 0, 0.3);
+	height: 120px;
+	margin-top: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+}

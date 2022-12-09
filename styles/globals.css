@@ -21,6 +21,7 @@ html {
 	min-height: 100vh;
 	border-left: var(--border);
 	border-right: var(--border);
+	position: relative;
 }
 
 .swiper-slide {

@@ -5,16 +5,22 @@
 	margin-top: 4px;
 	padding: 0 var(--side-padding);
 	justify-content: center;
-	gap: 16px;
+	gap: 12px;
 }
 
 .curr-location span:first-child {
 	font-size: 14px;
 	font-weight: 500;
 	color: var(--grey-color);
-	margin-bottom: 2px;
+	margin-bottom: 1px;
 }
 
 .curr-location span:last-child {
 	font-weight: 600;
+}
+
+.separator {
+	width: 1px;
+	height: 12px;
+	background-color: rgba(0, 0, 0, 0.3);
 }

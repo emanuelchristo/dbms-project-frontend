@@ -1,5 +1,6 @@
 .header {
 	padding: 24px var(--side-padding);
+	padding-bottom: 10px;
 	display: flex;
 	align-items: center;
 	gap: 18px;
@@ -80,6 +81,7 @@
 	flex-direction: column;
 	gap: 16px;
 	padding: 0 var(--side-padding);
+	padding-bottom: 24px;
 }
 
 .logout-button,

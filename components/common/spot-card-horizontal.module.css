@@ -1,14 +1,14 @@
 .card {
 	display: flex;
 	align-items: center;
-	gap: 18px;
+	gap: 13px;
 	cursor: pointer;
 }
 
 .vertical {
 	flex-direction: column;
 	align-items: flex-start;
-	width: 150px;
+	width: 140px;
 	overflow: hidden;
 	gap: 14px;
 }
@@ -24,10 +24,15 @@
 	flex-shrink: 0;
 }
 
+.vertical .thumbnail {
+	width: 140px;
+	height: 140px;
+}
+
 .content-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 6px;
 }
 
 .vertical .content-wrapper {
@@ -35,18 +40,14 @@
 }
 
 .type {
-	font-size: 13px;
+	font-size: 12px;
+	letter-spacing: 0.02rem;
 	font-weight: 600;
 	text-transform: uppercase;
-	padding: 5px 10px;
+	padding: 3px 8px;
 	border: var(--border);
 	border-radius: 50px;
 	width: fit-content;
-}
-
-.vertical .type {
-	font-size: 12px;
-	padding: 3px 8px;
 }
 
 .rating-wrapper {
@@ -63,9 +64,14 @@
 }
 
 .title {
-	font-size: 20px;
+	font-size: 19px;
 	font-weight: 600;
-	line-height: 1.35;
+	line-height: 1.3;
+
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .vertical .title {

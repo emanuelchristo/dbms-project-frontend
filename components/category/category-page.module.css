@@ -1,5 +1,6 @@
 .banner {
-	width: 100%;
+	width: 102%;
+	margin-left: -2px;
 	height: 150px;
 	display: flex;
 	align-items: flex-end;

@@ -9,9 +9,9 @@ import Navbar from 'components/common/Navbar'
 import SearchBar from 'components/common/SearchBar'
 import Sort from 'components/common/Sort'
 import SpotsList from 'components/common/SpotsList'
-import LoadingOverlay from 'components/common/LoadingOverlay'
 
 import styles from 'components/search/search-page.module.css'
+import { toast } from 'react-toastify'
 
 export default function SearchPage() {
 	const router = useRouter()
@@ -32,21 +32,25 @@ export default function SearchPage() {
 	}, [router.isReady, router.asPath])
 
 	useEffect(() => {
+		if (!(type && currPage && sort && query)) return
+		setTotalResults(0)
 		setLoading(true)
 		search({ type, page: currPage, sort, query })
 			.then((data) => {
-				setLoading(false)
 				setResults(data.spots)
 				setMaxPage(data.totalPages)
 				setCurrPage(data.page)
 				setTotalResults(data.totalResults)
+				setLoading(false)
 			})
-			.catch(console.error)
+			.catch((err) => {
+				console.error(err)
+				toast.error('Failed to load')
+			})
 	}, [query, currPage, type, sort])
 
 	return (
 		<>
-			{loading && <LoadingOverlay />}
 			<Navbar />
 			<CurrLocation />
 			<SearchBar />
@@ -61,7 +65,7 @@ export default function SearchPage() {
 				]}
 			/>
 			<span className={styles['result-count']}>Showing {toatalResults} results</span>
-			<SpotsList spots={results} />
+			<SpotsList loading={loading} spots={results} />
 			{maxPage > 1 && <Pagination currPage={currPage} maxPage={maxPage} onChange={setCurrPage} />}
 		</>
 	)

@@ -8,6 +8,7 @@ import Navbar from 'components/common/Navbar'
 import Sort from 'components/common/Sort'
 import Pagination from 'components/common/Pagination'
 import SpotsList from 'components/common/SpotsList'
+import { toast } from 'react-toastify'
 
 export default function CategoryPage() {
 	const router = useRouter()
@@ -16,6 +17,7 @@ export default function CategoryPage() {
 	const [sort, setSort] = useState('nearest')
 	const [currPage, setCurrPage] = useState(1)
 	const [maxPage, setMaxPage] = useState(1)
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		if (!router.isReady) return
@@ -27,11 +29,16 @@ export default function CategoryPage() {
 	}, [type, sort, currPage])
 
 	function fetchData() {
+		setLoading(true)
 		fetchCategory({ type, sort, page: currPage })
 			.then((data) => {
+				setLoading(false)
 				if (data) setSpots([...data])
 			})
-			.catch(console.error)
+			.catch((err) => {
+				console.error(err)
+				toast.error('Failed to load')
+			})
 	}
 
 	return (
@@ -57,7 +64,7 @@ export default function CategoryPage() {
 				onChange={setSort}
 			/>
 			<div className='h-[10px]'></div>
-			<SpotsList spots={spots} />
+			<SpotsList spots={spots} loading={loading} />
 			{maxPage > 1 && <Pagination currPage={currPage} maxPage={maxPage} onChange={setCurrPage} />}
 		</>
 	)

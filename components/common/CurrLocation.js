@@ -8,6 +8,7 @@ export default function CurrLocation() {
 	return (
 		<div className={styles['curr-location']}>
 			<span>Location</span>
+			<div className={styles['separator']}></div>
 			<span>{currLocName || 'NIT Calicut'}</span>
 		</div>
 	)

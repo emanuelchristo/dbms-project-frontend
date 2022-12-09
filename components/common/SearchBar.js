@@ -10,7 +10,7 @@ export default function SearchBar() {
 
 	useEffect(() => {
 		if (!router.isReady) return
-		if (router.query.q) setQuery(router.query.q)
+		if (router?.query?.q) setQuery(router.query.q)
 	}, [router.isReady, router.asPath])
 
 	function handleSearch(e) {

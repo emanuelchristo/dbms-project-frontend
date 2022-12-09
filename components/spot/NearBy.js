@@ -13,7 +13,7 @@ export default function NearBy({ spots }) {
 		return (
 			<div className={styles['near-by']}>
 				<h2 className={styles['heading']}>Near by</h2>
-				<Swiper spaceBetween={18} slidesPerView={'auto'} freeMode={true} threshold={2}>
+				<Swiper spaceBetween={12} slidesPerView={'auto'} freeMode={true} threshold={2}>
 					{spots?.map((item) => (
 						<SwiperSlide
 							key={item.spot_id}

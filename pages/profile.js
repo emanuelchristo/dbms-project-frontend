@@ -14,6 +14,7 @@ import EditName from 'components/profile/EditName'
 import { deleteAccount, editName, getProfile } from 'lib/api/user'
 import { useRouter } from 'next/router'
 import LoadingOverlay from 'components/common/LoadingOverlay'
+import PageLoader from 'components/common/PageLoader'
 
 export default function ProfilePage() {
 	const router = useRouter()
@@ -75,74 +76,76 @@ export default function ProfilePage() {
 			.catch(console.error)
 	}
 
-	return (
-		<>
-			{loading && <LoadingOverlay />}
-			<Navbar />
-			<div className={styles['header']}>
-				<div
-					className={styles['avatar']}
-					style={{ backgroundImage: `url('${user?.imageUrl}')` }}
-				></div>
+	if (loading) return <PageLoader />
+	else
+		return (
+			<>
+				{loading && <LoadingOverlay />}
+				<Navbar />
+				<div className={styles['header']}>
+					<div
+						className={styles['avatar']}
+						style={{ backgroundImage: `url('${user?.imageUrl}')` }}
+					></div>
 
-				<div className={styles['name-email']}>
-					<span className={styles['name']}>{user?.name}</span>
-					<span className={styles['email']}>{user?.email}</span>
-					<button className={styles['edit-name-button']} onClick={() => setShowEditName(true)}>
-						Edit name
+					<div className={styles['name-email']}>
+						<span className={styles['name']}>{user?.name}</span>
+						<span className={styles['email']}>{user?.email}</span>
+						<button className={styles['edit-name-button']} onClick={() => setShowEditName(true)}>
+							Edit name
+						</button>
+					</div>
+				</div>
+
+				<div className={styles['cards-grid']}>
+					<Link href='/favourites'>
+						<a>
+							<Card
+								number={stats?.favourites}
+								label='Favourites'
+								icon={<IoMdHeart color='#E70D42' />}
+								hoverZoom={true}
+							/>
+						</a>
+					</Link>
+					<Link href='/want-to-go'>
+						<a>
+							<Card
+								number={stats?.wantToGo}
+								label='Want to go'
+								icon={<MdBookmarkAdd color='#17A547' />}
+								hoverZoom={true}
+							/>
+						</a>
+					</Link>
+					<Card number={stats?.reviews} label='Reviews' icon={<MdStar color='#F6BB22' />} />
+					<Card number={stats?.views} label='Views' icon={<IoMdEye color='#5E2EE5' />} />
+				</div>
+
+				<div className={styles['buttons-wrapper']}>
+					<button className={styles['logout-button']} onClick={signOut}>
+						Logout
+					</button>
+					<button className={styles['delete-button']} onClick={() => setShowDeleteAccount(true)}>
+						Delete account
 					</button>
 				</div>
-			</div>
 
-			<div className={styles['cards-grid']}>
-				<Link href='/favourites'>
-					<a>
-						<Card
-							number={stats?.favourites}
-							label='Favourites'
-							icon={<IoMdHeart color='#E70D42' />}
-							hoverZoom={true}
-						/>
-					</a>
-				</Link>
-				<Link href='/want-to-go'>
-					<a>
-						<Card
-							number={stats?.wantToGo}
-							label='Want to go'
-							icon={<MdBookmarkAdd color='#17A547' />}
-							hoverZoom={true}
-						/>
-					</a>
-				</Link>
-				<Card number={stats?.reviews} label='Reviews' icon={<MdStar color='#F6BB22' />} />
-				<Card number={stats?.views} label='Views' icon={<IoMdEye color='#5E2EE5' />} />
-			</div>
-
-			<div className={styles['buttons-wrapper']}>
-				<button className={styles['logout-button']} onClick={signOut}>
-					Logout
-				</button>
-				<button className={styles['delete-button']} onClick={() => setShowDeleteAccount(true)}>
-					Delete account
-				</button>
-			</div>
-
-			<Modal show={showDeleteAccount}>
-				<DeleteAccount
-					onDelete={handleAccountDelete}
-					onCancel={() => setShowDeleteAccount(false)}
-				/>
-			</Modal>
-			<Modal show={showEditName}>
-				<EditName
-					name={user?.name}
-					onCancel={() => setShowEditName(false)}
-					onSave={handleEditName}
-				/>
-			</Modal>
-		</>
-	)
+				<Modal show={showDeleteAccount}>
+					<DeleteAccount
+						onDelete={handleAccountDelete}
+						onCancel={() => setShowDeleteAccount(false)}
+					/>
+				</Modal>
+				<Modal show={showEditName}>
+					<EditName
+						name={user?.name}
+						onCancel={() => setShowEditName(false)}
+						onSave={handleEditName}
+					/>
+				</Modal>
+			</>
+		)
 }
 
 function Card({ number, icon, label, hoverZoom }) {

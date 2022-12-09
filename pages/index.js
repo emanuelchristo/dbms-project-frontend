@@ -8,20 +8,30 @@ import Browse from 'components/home/Browse'
 import Recommended from 'components/home/Recommended'
 import { fetchRecommended } from 'lib/api/home'
 import { getCurrLocation } from 'lib/location'
+import { toast } from 'react-toastify'
 
 export default function Home() {
 	const { authToken } = useGlobalContext()
 	const [recommendedSpots, setRecommendedSpots] = useState([])
 	const [currLocation, setCurrLocation] = useState(null)
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		getCurrLocation().then(setCurrLocation).catch(console.error)
 	}, [])
 
 	useEffect(() => {
+		if (!currLocation) return
+		setLoading(true)
 		fetchRecommended({ authToken, location: currLocation })
-			.then(setRecommendedSpots)
-			.catch(console.error)
+			.then((data) => {
+				setRecommendedSpots(data)
+				setLoading(false)
+			})
+			.catch((err) => {
+				console.error(err)
+				toast.error('Failed to load')
+			})
 	}, [authToken, currLocation])
 
 	return (
@@ -30,7 +40,7 @@ export default function Home() {
 			<CurrLocation />
 			<SearchBar />
 			<Browse />
-			<Recommended spots={recommendedSpots} />
+			<Recommended loading={loading} spots={recommendedSpots} />
 		</>
 	)
 }

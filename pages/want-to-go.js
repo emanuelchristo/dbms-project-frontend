@@ -9,6 +9,7 @@ import Pagination from 'components/common/Pagination'
 import FilterBar from 'components/common/FilterBar'
 import { MdBookmarkAdd } from 'react-icons/md'
 import SpotsList from 'components/common/SpotsList'
+import { toast } from 'react-toastify'
 
 export default function FavouritesPage() {
 	const { getUser, user } = useGlobalContext()
@@ -25,7 +26,7 @@ export default function FavouritesPage() {
 			.then((user) => {
 				if (!user) router.push('/signin')
 			})
-			.catch(console.error)
+			.catch((err) => router.push('/'))
 	}, [])
 
 	useEffect(() => {
@@ -39,13 +40,16 @@ export default function FavouritesPage() {
 				if (data) setSpots([...data])
 				setLoading(false)
 			})
-			.catch(console.error)
+			.catch((err) => {
+				console.error(err)
+				toast.error('Failed to load')
+			})
 	}
 
 	return (
 		<>
 			<Navbar />
-			<div className='side-padding flex items-center gap-[12px] my-[8px]'>
+			<div className='side-padding flex items-center gap-[12px]'>
 				<MdBookmarkAdd style={{ fontSize: 30 }} color='#17A547' />
 				<h1>Want to go</h1>
 			</div>

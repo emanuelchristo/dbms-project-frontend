@@ -6,6 +6,7 @@ import { useGlobalContext } from 'lib/global-context'
 import Link from 'next/link'
 
 import styles from 'components/signin/signin-page.module.css'
+import Navbar from 'components/common/Navbar'
 
 export default function SignupPage() {
 	const router = useRouter()
@@ -52,64 +53,67 @@ export default function SignupPage() {
 	}
 
 	return (
-		<div className={styles['container']}>
-			<Link href='/'>
-				<img className={styles['logo']} src='logo.svg' />
-			</Link>
-			<h1 className={styles['heading']}>
-				Create a new <br />
-				account
-			</h1>
+		<>
+			<Navbar />
+			<div className={styles['container']}>
+				{/* <Link href='/'>
+					<img className={styles['logo']} src='logo.svg' />
+				</Link> */}
+				<h1 className={styles['heading']}>
+					Create a new <br />
+					account
+				</h1>
 
-			<div className={styles['form-wrapper']}>
-				<form onSubmit={handleCreateAccount} className={styles['form-wrapper']}>
-					<input
-						type='text'
-						placeholder='Name'
-						name='name'
-						value={form.name}
-						onChange={handleFormChange}
-						required
-					/>
-					<input
-						type='email'
-						placeholder='Email'
-						name='email'
-						value={form.email}
-						onChange={handleFormChange}
-						required
-					/>
-					<input
-						type='password'
-						placeholder='Password'
-						name='password'
-						value={form.password}
-						onChange={handleFormChange}
-						required
-					/>
-					<input
-						type='password'
-						placeholder='Confirm password'
-						name='confirmPassword'
-						value={form.confirmPassword}
-						onChange={handleFormChange}
-						required
-					/>
-					<button type='submit' className={`${styles['button']} ${styles['green']}`}>
-						<span>Create account</span> <img src='svgs/right-long-arrow-black.svg' />
-					</button>
-				</form>
-				<div className={styles['or-container']}>
-					<div className={styles['or-line']}></div>
-					<span>or</span>
-					<div className={styles['or-line']}></div>
+				<div className={styles['form-wrapper']}>
+					<form onSubmit={handleCreateAccount} className={styles['form-wrapper']}>
+						<input
+							type='text'
+							placeholder='Name'
+							name='name'
+							value={form.name}
+							onChange={handleFormChange}
+							required
+						/>
+						<input
+							type='email'
+							placeholder='Email'
+							name='email'
+							value={form.email}
+							onChange={handleFormChange}
+							required
+						/>
+						<input
+							type='password'
+							placeholder='Password'
+							name='password'
+							value={form.password}
+							onChange={handleFormChange}
+							required
+						/>
+						<input
+							type='password'
+							placeholder='Confirm password'
+							name='confirmPassword'
+							value={form.confirmPassword}
+							onChange={handleFormChange}
+							required
+						/>
+						<button type='submit' className={`${styles['button']} ${styles['green']}`}>
+							<span>Create account</span> <img src='svgs/right-long-arrow-black.svg' />
+						</button>
+					</form>
+					<div className={styles['or-container']}>
+						<div className={styles['or-line']}></div>
+						<span>or</span>
+						<div className={styles['or-line']}></div>
+					</div>
+					<Link href='/signin'>
+						<button className={`${styles['button']} ${styles['grey']}`}>
+							<span>Sign in</span> <img src='svgs/right-long-arrow-black.svg' />
+						</button>
+					</Link>
 				</div>
-				<Link href='/signin'>
-					<button className={`${styles['button']} ${styles['grey']}`}>
-						<span>Sign in</span> <img src='svgs/right-long-arrow-black.svg' />
-					</button>
-				</Link>
 			</div>
-		</div>
+		</>
 	)
 }
